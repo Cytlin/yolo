@@ -16,7 +16,7 @@ services:
     depends_on:
       - mongo
     environment:
-      - MONGODB_URI=mongodb+srv://admin:admin@iponemoringa.blusow8.mongodb.net/
+      - MONGODB_URI=mongodb//mongo/yolodatabase
 
   mongo:
     image: mongo:latest
