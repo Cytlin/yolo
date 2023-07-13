@@ -1,6 +1,6 @@
 FROM node:14-alpine
 
-WORKDIR /app
+WORKDIR /app/backend
 
 COPY package*.json ./
 
@@ -13,4 +13,4 @@ COPY . .
 EXPOSE 5000
 
 # Set the command to run the client
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
