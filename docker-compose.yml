@@ -4,7 +4,6 @@ services:
     image: cytlin/ip2-client-side-image:v1.0.0
     ports:
       - 3000:3000
-    command: npm start
 
   backend:
     image: cytlin/ip2-backend-side-image:v1.0.0
