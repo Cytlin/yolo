@@ -1,6 +1,7 @@
 version: '3'
 services:
   client:
+    image: client-side-image:1.0.0
     build:
       context: .
       dockerfile: ./client/Dockerfile
@@ -8,6 +9,7 @@ services:
       - 3000:3000
 
   backend:
+    image: backend-side-image:1.0.0
     build:
       context: .
       dockerfile: ./backend/Dockerfile
