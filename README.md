@@ -20,4 +20,10 @@ Make sure that you have the following installed:
 
  `npm start`
 
- ### Go ahead a nd add a product (note that the price field only takes a numeric input)
+ ### Go ahead and add a product (note that the price field only takes a numeric input)
+
+ ## Docker hub repository link for client side image 
+ 'https://hub.docker.com/repository/docker/cytlin/ip2-client-side-image/general'
+
+ ## Docker hub repository link for back-end side image
+ 'https://hub.docker.com/repository/docker/cytlin/ip2-backend-side-image/general'
