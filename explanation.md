@@ -72,3 +72,10 @@ Image tagged both the client side and backend side containers.
 Used semantic versioning in the docker-compose.yml file for easy identification of images built
 image: client-side-image:1.0.0
 image: backend-side-image:1.0.0
+
+
+## Docker hub repository link for client side image 
+ 'https://hub.docker.com/repository/docker/cytlin/ip2-client-side-image/general'
+
+## Docker hub repository link for back-end side image
+ 'https://hub.docker.com/repository/docker/cytlin/ip2-backend-side-image/general'
