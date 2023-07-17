@@ -71,15 +71,9 @@ Added .env file that was missing with the MongoDB Url
 
 
 ->Good practices such as Docker image tag naming standards for ease of identification of images and containers.
+-->Image tagging and version for both the client side and backend side in the docker-compose.yml file
+Used semantic versioning for easy identification of images built
+image: client-side-image:1.0.0
+image: backend-side-image:1.0.0
 
--->Command used to test out the build and running of the containers before the docker-compose.yml:
-          Command to build docker image for the client side:
-            sudo docker build -t cytlin/client-side-image:v1.0.0
-          Command to build docker image for the backend side:
-            sudo docker build -t cytlin/backend-side-image:v1.0.0
-          Command to run docker container for the client side:
-            sudo docker run --name client-container  cytlin/client-side-image:v1.0.0
-          Command to run docker container for the backend side:
-            sudo docker run --name backend-container cytlin/backend-side-image:v1.0.0
--->Command used to build and run the application using Docker Compose
-            docker-compose up --build
+
