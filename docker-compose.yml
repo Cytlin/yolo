@@ -1,18 +1,13 @@
 version: '3'
 services:
   client:
-    image: client-side-image:1.0.0
-    build:
-      context: .
-      dockerfile: ./client/Dockerfile
+    image: cytlin/ip2-client-side-image:v1.0.0
     ports:
       - 3000:3000
+    command: npm start
 
   backend:
-    image: backend-side-image:1.0.0
-    build:
-      context: .
-      dockerfile: ./backend/Dockerfile
+    image: cytlin/ip2-backend-side-image:v1.0.0
     ports:
       - 5000:5000
     depends_on:
