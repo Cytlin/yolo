@@ -6,61 +6,47 @@
 -->Client side Dockerfile:
 
 #Sets the base image as Node which is built on top of alpine, a lightweight linux distribution.
-
 FROM node:14-alpine
 
 #Sets the workdirectory to app/client and the subsequent instructions will be executed relative to this path.
-
 WORKDIR /app/client
 
-#Copy the package.json and package-lock.json from the build context where the Dockerfile is located to the current #working directory.
-
+#Copy the package.json and package-lock.json from the build context where the Dockerfile is located to the current working directory.
 COPY package\*.json ./
 
 #Install dependencies listed in package.json.
-
 RUN npm install
 
 #Copies all the files in the build context to the current working directory in the container.
-
 COPY . .
 
 #Informs that the container will listen on port 3000
-
 EXPOSE 3000
 
 #Command to start the container
-
 CMD ["npm", "run", "start"]
 
 -->Backend side Dockerfile:
 
 #Sets the base image as Node which is built on top of alpine, a lightweight linux distribution.
-
 FROM node:14-alpine
 
 #Sets the workdirectory to app/client and the subsequent instructions will be executed relative to this path.
-
 WORKDIR /app/backend
 
-#Copy the package.json and package-lock.json from the build context where the Dockerfile is located to the current #working directory.
-
+#Copy the package.json and package-lock.json from the build context where the Dockerfile is located to the current working directory.
 COPY package\*.json ./
 
 #Install dependencies listed in package.json.
-
 RUN npm install
 
 #Copies all the files in the build context to the current working directory in the container.
-
 COPY . .
 
 #Informs that the container will listen on port 5000
-
 EXPOSE 5000
 
 #Command to start the container
-
 CMD ["npm", "run", "start"]
 
 ->Docker-compose Networking (Application port allocation and a bridge network implementation) where necessary.
@@ -78,10 +64,11 @@ Cloned repository in local machine
 Edited the application and pushed commits to the remote repository.
 
 ->Successful running of the applications and if not, debugging measures applied.
-Added .env file that was missing with the MONGODB_URI
+Added .env file that was missing with the MongoDB Url
 
 ->Good practices such as Docker image tag naming standards for ease of identification of images and containers.
 -->Image tagging and version for both the client side and backend side in the docker-compose.yml file
+Image tagged both the client side and backend side containers.
 Used semantic versioning in the docker-compose.yml file for easy identification of images built
 image: client-side-image:1.0.0
 image: backend-side-image:1.0.0
