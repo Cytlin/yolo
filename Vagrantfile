@@ -73,7 +73,7 @@ Vagrant.configure("2") do |config|
     end
     #Provisioning configuration for Ansible
     config.vm.provision "ansible" do |ansible|
-    ansible.playbook= "playbool.yml"
+    ansible.playbook= "playbook.yml"
       #Configurations for VirtualBox provider
     end
   
