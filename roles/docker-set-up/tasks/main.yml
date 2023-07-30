@@ -1,0 +1,9 @@
+- name: Install Docker
+  apt:
+    name: docker-ce
+    state: latest
+
+- name: Start Docker daemon
+  service:
+    name: docker
+    state: started

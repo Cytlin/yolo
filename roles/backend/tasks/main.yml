@@ -1,0 +1,5 @@
+- name: Pull Backend Docker image from Docker Hub
+  shell: docker pull cytlin/ip2-backend-side-image:v1.0.0
+
+- name: Run Backend Container with MongoDB Link
+  shell: docker run -d --name backend_container -p 5000:5000 --link mongo_container:mongo -e MONGODB_URI=mongodb://mongo/yolodatabase cytlin/ip2-backend-side-image:v1.0.0

@@ -3,54 +3,9 @@
   hosts: all
   become: yes
 
-  tasks:
-    - name: Update apt package cache
-      apt:
-        update_cache: yes
-
-    - name: Install Docker dependencies
-      apt:
-        name:
-          - apt-transport-https
-          - ca-certificates
-          - curl
-          - software-properties-common
-        state: present
-
-    - name: Add Docker GPG key
-      apt_key:
-        url: https://download.docker.com/linux/ubuntu/gpg
-        state: present
-
-    - name: Add Docker repository
-      apt_repository:
-        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
-        state: present
-
-    - name: Install Docker
-      apt:
-        name: docker-ce
-        state: latest
-
-    - name: Start Docker daemon
-      service:
-        name: docker
-        state: started
-
-    - name: Pull Client Docker image from Docker Hub
-      shell: docker pull cytlin/ip2-client-side-image:v1.0.0
-
-    - name: Run Client Container
-      shell: docker run -d --name client_container -p 3000:3000 cytlin/ip2-client-side-image:v1.0.0
-
-    - name: Pull Backend Docker image from Docker Hub
-      shell: docker pull cytlin/ip2-backend-side-image:v1.0.0
-
-    - name: Create Persistent Volume for MongoDB
-      shell: docker volume create mongodb_data
-
-    - name: Run MongoDB Container
-      shell: docker run -d --name mongo_container -p 27017:27017 -v mongodb_data:/data/db mongo:latest mongod --bind_ip_all
-
-    - name: Run Backend Container with MongoDB Link
-      shell: docker run -d --name backend_container -p 5000:5000 --link mongo_container:mongo -e MONGODB_URI=mongodb://mongo/yolodatabase cytlin/ip2-backend-side-image:v1.0.0
+  roles:
+    - initial-set-up
+    - docker-set-up
+    - client
+    - backend
+    - mongodb

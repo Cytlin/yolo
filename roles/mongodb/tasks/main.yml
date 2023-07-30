@@ -1,0 +1,5 @@
+- name: Create Persistent Volume for MongoDB
+  shell: docker volume create mongodb_data
+
+- name: Run MongoDB Container
+  shell: docker run -d --name mongo_container -p 27017:27017 -v mongodb_data:/data/db mongo:latest mongod --bind_ip_all
