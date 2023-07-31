@@ -34,6 +34,7 @@
 - client role: pulls client image from docker hub, runs it and created a network link between backend container
 - backend role: pulls backend image from docker hub and runs it
 - mongodb role: creates a docker volume, run mongo container and allow connections from outside
+- created variables for port numbers and image names inside roles directory
 
 # IP-2
 

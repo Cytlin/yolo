@@ -1,0 +1,5 @@
+# roles/common_vars/main.yml
+backend_image: cytlin/ip2-backend-side-image:v1.0.0
+backend_port_number: 5000
+client_image: cytlin/ip2-client-side-image:v1.0.0
+client_port_number: 3000
