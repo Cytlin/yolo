@@ -37,6 +37,12 @@
 - created variables for port numbers and image names inside roles directory
 - created blocks and tags for selective execution 'setup', 'front-end-setup', 'backend-setup', 'db-setup'
 
+## Testing
+
+- run 'vagrant ssh' to connect to VM
+- run 'docker ps' to verify that docker containers are running
+- run 'docker volume ls' to verify that docker volume was created
+
 # IP-2
 
 ## Choice of the base image on which to build each container.
