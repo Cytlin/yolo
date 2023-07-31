@@ -35,6 +35,7 @@
 - backend role: pulls backend image from docker hub and runs it
 - mongodb role: creates a docker volume, run mongo container and allow connections from outside
 - created variables for port numbers and image names inside roles directory
+- created blocks and tags for selective execution 'setup', 'front-end-setup', 'backend-setup', 'db-setup'
 
 # IP-2
 

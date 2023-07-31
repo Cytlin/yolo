@@ -4,8 +4,17 @@
   become: yes
 
   roles:
-    - initial-set-up
-    - docker-set-up
-    - client
-    - backend
-    - mongodb
+    - role: initial-set-up
+      tags: setup
+
+    - role: docker-set-up
+      tags: setup
+
+    - role: client
+      tags: front-end-setup
+
+    - role: backend
+      tags: backend-setup
+
+    - role: mongodb
+      tags: db-setup
