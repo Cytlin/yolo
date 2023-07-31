@@ -13,8 +13,8 @@
     - role: client
       tags: front-end-setup
 
-    - role: backend
-      tags: backend-setup
-
     - role: mongodb
       tags: db-setup
+
+    - role: backend
+      tags: backend-setup
