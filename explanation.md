@@ -1,3 +1,33 @@
+# IP-4
+
+## Google cloud setup
+
+- created google cloud project
+- enabled billing
+- enabled APIS: Artifact Registry, Cloud Build, Google Kubernetes Engine
+- initialize gcloud
+
+## Project Setup
+
+- Created directory locally
+- Git cloned the yolo project
+- created repos in Artifact Registry for images
+- used cloud build to build and push container images
+- created a cluster
+- created deployment manifest files to deploy client-side, backend-side into pods
+- created service manifest files to forward traffic to specified pods, and specified ports to listen to and forward traffic to.
+- used LoadBalancer to expose pods externally, to internet traffic
+- Defined a stateful set for MongoDB and maintained one replica (Pod) of this StatefulSet to maintain service availability.
+- mounted volumes within the container for persistent storage
+
+## External IP
+
+- http://104.198.187.98:3000/
+
+## Testing
+
+- pasted the external IPs on web browser to test adding product in the web app
+
 # IP-3
 
 ## Project Setup
@@ -36,8 +66,6 @@
 - mongodb role: creates a docker volume, run mongo container and allow connections from outside
 - created variables for port numbers and image names inside roles directory
 - created blocks and tags for selective execution 'setup', 'front-end-setup', 'backend-setup', 'db-setup'
-
-## Testing
 
 - run 'vagrant ssh' to connect to VM
 - run 'docker ps' to verify that docker containers are running
