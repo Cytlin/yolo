@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  labels:
+    app: yolo-backend-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yolo-backend-app
+  template:
+    metadata:
+      labels:
+        app: yolo-backend-app
+    spec:
+      containers:
+        - name: yolo-backend-container
+          image: cytlin/ip2-backend-side-image:v1.0.0
+          ports:
+            - containerPort: 5000
+          env:
+            - name: MONGODB_URI
+              value: mongodb://mongo-service:27017/yolodatabase
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
