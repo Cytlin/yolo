@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+  labels:
+    app: yolo-client-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yolo-client-app
+  template:
+    metadata:
+      labels:
+        app: yolo-client-app
+    spec:
+      containers:
+        - name: yolo-client-container
+          image: us-central1-docker.pkg.dev/my-devops-project2/ip4client-side-image-repo/client-side-container-gke:latest
+          ports:
+            - containerPort: 3000
