@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: yolo-client-container
-          image: us-central1-docker.pkg.dev/my-devops-project2/ip4client-side-image-repo/client-side-container-gke:latest
+          image: us-central1-docker.pkg.dev/my-devops-project2/ip4client-side-image-repo/client-side-container-gke:v1.0.0
           ports:
             - containerPort: 3000

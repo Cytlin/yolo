@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: yolo-backend-container
-          image: us-central1-docker.pkg.dev/my-devops-project2/ip4backend-side-image-repo/backend-side-container-gke:latest
+          image: us-central1-docker.pkg.dev/my-devops-project2/ip4backend-side-image-repo/backend-side-container-gke:v1.0.0
           ports:
             - containerPort: 5000
           env:
