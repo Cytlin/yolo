@@ -1,11 +1,12 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
-  name: mongo-deployment
+  name: mongo-statefulset
   labels:
     app: mongo
 spec:
   replicas: 1
+  serviceName: mongo-service
   selector:
     matchLabels:
       app: mongo
